@@ -1,0 +1,8 @@
+# =================================
+# = Spring
+# =================================
+spring:
+  datasource:
+    driver-class-name:
+    url: jdbc:mysql://realmeet-banco.cujquu5x3ruv.us-east-1.rds.amazonaws.com/realmeet?&serverTimezone=UTC&useSSL=false
+    username: admin
