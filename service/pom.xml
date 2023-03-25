@@ -26,7 +26,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>3.0.4</version>
         </dependency>
         <dependency>
             <groupId>org.flywaydb</groupId>
@@ -148,26 +147,7 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>com.hubspot.maven.plugins</groupId>
-                <artifactId>prettier-maven-plugin</artifactId>
-                <version>${prettier-maven-plugin.version}</version>
-                <configuration>
-                    <printWidth>120</printWidth>
-                    <tabWidth>4</tabWidth>
-                    <prettierJavaVersion>0.7.1</prettierJavaVersion>
-                    <generateDiff>true</generateDiff>
-                    <fail>true</fail>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>

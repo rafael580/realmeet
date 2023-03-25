@@ -1,11 +1,14 @@
 package br.com.sw2you.realmeet.domain.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "room")
-public class Room {
+public class Room  implements Serializable {
+
+    private static final Long serialVersionUUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
