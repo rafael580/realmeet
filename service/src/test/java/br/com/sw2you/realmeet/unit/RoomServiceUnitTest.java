@@ -33,14 +33,11 @@ public class RoomServiceUnitTest extends BaseUnitTest {
     }
 
     @Test
-    public void testGetRoomSucess(){
-        // chamando novo objeto  room
-        var room = newRoomBuilder().Id(DEFAULT_ROOM_ID).build();
-        // simulando quando este metodo for chama o que ele deve fazer
-        Mockito.when(roomRepository.findByIdActive(DEFAULT_ROOM_ID,true)).thenReturn(Optional.of(room));
-        // chamando o dto do service
-        var dto =  victim.getRoom(DEFAULT_ROOM_ID);
+    void testGetRoomSuccess() {
+        var room = newRoomBuilder().id(DEFAULT_ROOM_ID).build();
+        Mockito.when(roomRepository.findByIdAndActive(DEFAULT_ROOM_ID, true)).thenReturn(Optional.of(room));
 
+        var dto = victim.getRoom(DEFAULT_ROOM_ID);
         Assertions.assertEquals(room.getId(), dto.getId());
         Assertions.assertEquals(room.getName(), dto.getName());
         Assertions.assertEquals(room.getSeats(), dto.getSeats());
@@ -48,7 +45,7 @@ public class RoomServiceUnitTest extends BaseUnitTest {
 
     @Test
    public void testGetRoomNotFound() {
-        Mockito.when(roomRepository.findByIdActive(DEFAULT_ROOM_ID, true)).thenReturn(Optional.empty());
+        Mockito.when(roomRepository.findByIdAndActive(DEFAULT_ROOM_ID, true)).thenReturn(Optional.empty());
         assertThrows(RoomNotFoundException.class, () -> victim.getRoom(DEFAULT_ROOM_ID));
     }
 

@@ -43,7 +43,7 @@ public class RoomApiIntegrationTest extends BaseIntegrationTest {
 
     @Test
     public void testGetRoomInactive(){
-        var room = newRoomBuilder().Active(false).build();
+        var room = newRoomBuilder().active(false).build();
         roomRepository.saveAndFlush(room);
 
         Assertions.assertFalse(room.getActive());

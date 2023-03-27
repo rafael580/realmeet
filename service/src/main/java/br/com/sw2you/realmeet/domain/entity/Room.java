@@ -88,22 +88,22 @@ public class Room  implements Serializable {
         private Builder() {
         }
 
-        public Builder Id(Long id) {
+        public Builder id(Long id) {
             this.id = id;
             return this;
         }
 
-        public Builder Name(String name) {
+        public Builder name(String name) {
             this.name = name;
             return this;
         }
 
-        public Builder Seats(Integer seats) {
+        public Builder seats(Integer seats) {
             this.seats = seats;
             return this;
         }
 
-        public Builder Active(Boolean active) {
+        public Builder active(Boolean active) {
             this.active = active;
             return this;
         }

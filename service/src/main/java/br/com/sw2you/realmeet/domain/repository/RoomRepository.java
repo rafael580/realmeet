@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface RoomRepository extends JpaRepository<Room,Long>{
 
-    Optional<Room> findByIdActive(Long id,Boolean active);
+    Optional<Room> findByIdAndActive(Long id,Boolean active);
 
 }

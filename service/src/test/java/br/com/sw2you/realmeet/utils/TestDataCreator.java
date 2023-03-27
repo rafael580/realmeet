@@ -10,7 +10,7 @@ public final class TestDataCreator {
     private TestDataCreator() {}
 
     public static Room.Builder newRoomBuilder() {
-        return Room.newRoom().Name(DEFAULT_ROOM_NAME).Seats(DEFAULT_ROOM_SEATS);
+        return Room.newRoom().name(DEFAULT_ROOM_NAME).seats(DEFAULT_ROOM_SEATS);
     }
 
 
