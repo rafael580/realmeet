@@ -1,0 +1,11 @@
+# =================================
+# = Spring
+# =================================
+spring:
+  datasource:
+    driver-class-name: org.testcontainer.jdbc.ContainerDatabaseDriver
+    url: jdbc:tc:mysql://localhost/realmeet
+    username: admin
+    password: admin
+    type: com.zaxxer.hikari.HikariDataSource
+

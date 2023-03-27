@@ -24,14 +24,11 @@ public class RoomService {
 
     public RoomDTO getRoom(Long id){
         Objects.requireNonNull(id);
-        Room room =  roomRepository.findById(id).orElseThrow(()-> new RoomNotFoundException("Room not found"));
-        System.out.println("");
+        Room room =  roomRepository.findByIdActive(id,true).orElseThrow(()-> new RoomNotFoundException("Room not found"));
         RoomDTO roomDTO =  roomMapper.fromEntityToDTO(room);
         return roomDTO;
     }
 
-    private void clonarDtop(Room room, RoomDTO roomDTO){
-        roomDTO.name(room.getName()).seats(room.getSeats()).id(room.getId());
-    }
+
 
 }

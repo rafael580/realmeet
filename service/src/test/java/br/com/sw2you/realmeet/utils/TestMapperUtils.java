@@ -9,6 +9,7 @@ public final class TestMapperUtils {
     private TestMapperUtils() {}
 
     public static RoomMapper roomMapper() {
+        // recupera o room mapper
         return Mappers.getMapper(RoomMapper.class);
     }
 }
