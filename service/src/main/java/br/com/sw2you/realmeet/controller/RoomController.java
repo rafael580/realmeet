@@ -3,7 +3,10 @@ package br.com.sw2you.realmeet.controller;
 import static java.util.concurrent.CompletableFuture.supplyAsync;
 
 import br.com.sw2you.realmeet.api.facade.RoomsApi;
+import br.com.sw2you.realmeet.api.model.CreateRoomDTO;
 import br.com.sw2you.realmeet.api.model.RoomDTO;
+
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
@@ -11,6 +14,7 @@ import br.com.sw2you.realmeet.service.RoomService;
 import br.com.sw2you.realmeet.util.ResponseEntityUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.NativeWebRequest;
 
 @RestController
 public class RoomController implements RoomsApi {
@@ -27,5 +31,10 @@ public class RoomController implements RoomsApi {
     public CompletableFuture<ResponseEntity<RoomDTO>> getRoom(Long id) {
         // reference method tem o mesmo parametro da entrada da expressao lambda r -> ResponseEntityUtils.ok(r)
         return supplyAsync(()-> roomService.getRoom(id),controllerExecutor).thenApply(ResponseEntityUtils::ok);
+    }
+
+    @Override
+    public CompletableFuture<ResponseEntity<RoomDTO>> createRoom(CreateRoomDTO createRoomDTO) {
+        return supplyAsync(()-> roomService.createRoom(createRoomDTO),controllerExecutor).thenApply(ResponseEntityUtils::crated);
     }
 }

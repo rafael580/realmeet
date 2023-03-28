@@ -29,11 +29,11 @@ public class RoomServiceUnitTest extends BaseUnitTest {
     @BeforeEach
     void setupEach(){
         // injeta a classe roomMapper no victim
-        victim = new RoomService(roomRepository,roomMapper());
+    //    victim = new RoomService(roomRepository,roomMapper());
     }
 
     @Test
-    void testGetRoomSuccess() {
+   public void testGetRoomSuccess() {
         var room = newRoomBuilder().id(DEFAULT_ROOM_ID).build();
         Mockito.when(roomRepository.findByIdAndActive(DEFAULT_ROOM_ID, true)).thenReturn(Optional.of(room));
 
